@@ -1,0 +1,35 @@
+{
+    "manifest_version": "0.1", 
+    "name": "windows-diagnostic-mcp", 
+    "version": "0.1.0", 
+    "description": "Helps diagnose and monitor Windows system health as well as performance evaluations", 
+    "author": {
+        "name": "ZynBee"
+    },
+    "server": {
+        "type": "python",
+        "entry_point": "windows_diagnostic_mcp.server:main",
+        "mcp_config": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "C:\\Users\\<YOUR_USERNAME>\\AppData\\Roaming\\Claude\\Claude Extensions\\local.unpacked.zynbee.windows-diagnostic-mcp",
+                "run",
+                "windows-diagnostic-mcp",
+                "--mode",
+                "stdio"
+            ]
+        }
+    },
+    "compatibility": {
+        "claude_desktop": ">=1.0.0",
+        "my_client": ">1.0.0",
+        "other_client": ">=2.0.0 <3.0.0",
+        "platforms": [
+            "win32"
+        ],
+        "runtimes": {
+            "python": ">=3.11"
+        }
+    }
+}
